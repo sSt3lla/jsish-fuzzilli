@@ -1,0 +1,23 @@
+
+.gdb_history
+*.o
+*.a
+*.so
+
+#Compiled files
+jsish
+jsish_
+jsimin
+jsishs
+
+#Produced files
+zhash.txt
+src/parser.*
+
+#Dependencies
+sqlite/src
+sqlite/sqlite*
+
+lws/src
+lws/lws-master
+lws/master.zip

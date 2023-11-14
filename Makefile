@@ -3,6 +3,12 @@ PREFIX=/usr/local
 SQLITE_VER=3300100
 LWS_VER=2.0202
 WITH_SSL=0
+WITH_EXT_WEBSOCKET=0
+WITH_EXT_SQLITE=0
+WITH_EXT_WEBSOCKET=0
+BUILDIN_WEBSOCKET=0
+BUILDIN_SQLITE=0
+BUILDIN_WEBSOCKET=0
 WEBSOCKROOT = lws/src
 WEBSOCKSRC = $(WEBSOCKROOT)/src
 ACFILES	= src/parser.c
@@ -17,7 +23,7 @@ BLDDIR=$(PWD)
 CFLAGS += -I. -Isrc -Wall -Wsign-compare -Wtype-limits -Wuninitialized -DJSI__MAIN=1
 # -pg
 #CFLAGS += -g -O3
-CFLAGS += -g -Og -O0
+CFLAGS += -O2
 #CFLAGS += -g -Og -g3
 SLIBCFLAGS = -Wl,--export-dynamic -shared -DJSI_USE_STUBS=1
 
@@ -253,6 +259,8 @@ PROGFLAGS += -DJSI__MUSL
 CC=musl-gcc
 CFLAGS += -D__MUSL__
 endif
+
+CC=clang
 
 CCPATH := $(shell which $(CC) )
 ifeq ($(CCPATH),)
