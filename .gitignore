@@ -21,3 +21,6 @@ sqlite/sqlite*
 lws/src
 lws/lws-master
 lws/master.zip
+
+#Fuzz stuff
+fuzz/fuzz
