@@ -19,7 +19,7 @@ RUN make && make -C fuzz
 RUN cp fuzz/jsishProfile.swift /fuzzilli/Sources/FuzzilliCli/Profiles
 
 #Edit the main.swift
-RUN sed '/let profiles = \[/a\    "jsish": jsishProfile,' /fuzzilli/Sources/FuzzilliCli/Profiles/Profile.swift
+RUN sed -i '/let profiles = \[/a\    "jsish": jsishProfile,' /fuzzilli/Sources/FuzzilliCli/Profiles/Profile.swift
 
 WORKDIR /fuzzilli
 RUN swift build -c release
